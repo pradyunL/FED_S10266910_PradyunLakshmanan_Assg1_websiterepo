@@ -1,0 +1,58 @@
+/* General Styles */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; 
+  }
+  
+h1, h2 {
+    margin: 0;
+  }
+  
+a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  /* Banner Styles */
+.banner {
+    display: flex;
+    background-color: #00509E;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    height: 30px;
+
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif
+  }
+  
+  /* Navigation Bar Styles */
+.navbar {
+    position: sticky;
+    width: 100%;
+    display: flex;
+    
+    align-items: center;
+    height: 40px;
+    background-color: #00274D;
+    padding: 10px 20px;
+    color: white;
+    z-index: 999;
+  }
+
+nav{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
