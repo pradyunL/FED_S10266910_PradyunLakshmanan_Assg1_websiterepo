@@ -75,7 +75,10 @@ nav{
 
 .search-bar input {
     border: 1px solid #00509E;
-    border-radius: 5px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 14px;
     height: 30px;
 }
@@ -85,7 +88,7 @@ nav{
     border: 1px solid #00509E;
     color: white;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 30px;
     font-size: 14px;
     height: 30px;
 }
@@ -133,7 +136,6 @@ nav{
 }
 
 .shop-button {
-  padding-top: 100px;
   background-color: white;
   color: #00274D;
   border: none;
@@ -154,14 +156,14 @@ nav{
   padding: 20px;
 }
 
-.scroll-header {
+.section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.scroll-header h2 {
+.section-header h2 {
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
@@ -186,9 +188,9 @@ nav{
 }
 
 .scroll-item {
-  flex: 0 0 200px;
-  height: 200px;
-  margin-top: 5px;
+  flex: 0 0 300px;
+  height: 300px;
+  margin-top: 10px;
   background-color: #ddd;
   border-radius: 10px;
   display: flex;
@@ -198,9 +200,73 @@ nav{
   font-weight: bold;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s;
 }
 
 .scroll-item:hover {
   transform: scale(1.05);
 }
+
+.product-section {
+  display: flex;
+  height: 400px;
+  gap: 0;
+}
+
+.product-description {
+  flex: 2;
+  background-color: #00274D;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.product-images {
+  flex: 3;
+  display: grid;
+  grid-template-areas:
+    "model normal"
+    "model angle";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+}
+.model-image {
+  grid-area: model;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.normal-angle-image {
+  grid-area: normal;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.different-angle-image {
+  grid-area: angle;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
