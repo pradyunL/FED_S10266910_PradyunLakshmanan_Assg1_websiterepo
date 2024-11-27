@@ -3,7 +3,6 @@
 <head>  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>cross-X</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,14 +17,10 @@
       <a href="#">Men</a>
       <a href="#">Women</a>
       <a href="#">Kids</a>
-      <a href="#">Shoes</a>
+      <a href="http://127.0.0.1:5500/shoes.html">Shoes</a>
     </nav>
-    <div class="right-section">
-      <form class="search-bar" action="#" method="get">
-        <input type="text" placeholder="Search" name="search" />
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-      <div style="padding-right: 20px;"><a href="#">Profile</a></div>
+    <div>
+      <div style="padding: 15px;"><a href="#">Profile</a></div>
     </div>
   </header>
   <article class="image-container">
@@ -36,13 +31,13 @@
         Whether you're running, training, or just looking for a stylish new pair, we've got the perfect fit for every adventure. 
         Explore our diverse collection and step up your game with the best shoes in the market!
       </p>
-      <button class="shop-button" style = 'margin-top: 20px;'>Shop Shoes</button>
+      <button class="shop-button">Shop Shoes</button>
     </div>
   </article>
-  <div class="scroll-section">
+  <div class="padding-section">
     <div class="section-header">
       <h2>Best-Selling Shoes</h2>
-      <button class="shop-button">Shop Now</button>
+      <button class="inverse-shop-button">Shop Now</button>
     </div>
     <div class="scroll-container">
       <div class="scroll-item"></div>
@@ -52,16 +47,16 @@
       <div class="scroll-item"></div>
     </div>
   </div>
-  <article style="padding:20px;">
+  <article class="padding-section">
     <div class="section-header">
       <h2>Trending</h2>
-      <button class="shop-button">Shop Now</button>
+      <button class="inverse-shop-button">Shop Now</button>
     </div>
     <section class="product-section">
       <div class="product-description">
         <h2>Just In</h2>
         <h3>Eon Foam Slides</h3>
-        <p>Description of the shoe goes here...</p>
+        <p >Crafted with our brand new Eon Foam technology, these slides will feel like you're walking on cloud. Designed for both comfort and durability, they are perfect for long days on your feet or casual outings. The lightweight construction reduces fatigue, while the slip-resistant sole ensures stability on various surfaces. With a sleek and modern design, these slides effortlessly combine style and functionality, making them a must-have for any wardrobe.</p>
       </div>
       <div class="product-images">
         <div class="model-image">
@@ -76,7 +71,72 @@
       </div>
     </section>    
   </article>
-  
+  <div class="padding-section">
+    <div class="section-header">
+      <h2>Shop By Sport</h2>
+      <button class="inverse-shop-button">Shop Now</button>
+    </div>
+    <div class="scroll-container">
 
-  
-  </body>
+      <div class="scroll-by-sports" style="flex: 0 0 500px;height: 300px;">
+        <img src="sport1.jpg" alt="Football Image" style="width: 100%; height: 100%;">
+        <button class="scroll-by-sports-button">Football</button>
+      </div>
+
+      <div class="scroll-by-sports" style="flex: 0 0 500px;height: 300px;">
+        <img src="sport2.jpg" alt="Track Image" style="width: 100%; height: 100%;">
+        <button class="scroll-by-sports-button">Track</button>
+      </div>
+
+      <div class="scroll-by-sports" style="flex: 0 0 500px;height: 300px;">
+        <img src="sport3.jpg" alt="Basketball Image" style="width: 100%; height: 100%;">
+        <button class="scroll-by-sports-button">Basketball</button>
+      </div>
+
+      <div class="scroll-by-sports" style="flex: 0 0 500px;height: 300px;">
+        <img src="sport4.jpg" alt="Tennis Image" style="width: 100%; height: 100%;">
+        <button class="scroll-by-sports-button">Tennis</button>
+      </div>
+
+      <div class="scroll-by-sports" style="flex: 0 0 500px;height: 300px;">
+        <img src="sport5.jpg" alt="Gym Image" style="width: 100%; height: 100%;">
+        <button class="scroll-by-sports-button">Gym</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="padding-section">
+    <div class="section-header">
+      <h2>Spotlight</h2>
+    </div>
+    <div class="slideshow-container">
+
+      <div class="mySlides">
+        <img src="slideshow-1.jpeg" style="height:100%;width:100%">
+        <div class="slideshow-text">Bar 1s Out Now</div>
+      </div>
+      
+      <div class="mySlides">
+        <img src="slideshow-2.jpeg" style="height:100%;width:100%">
+        <div class="slideshow-text"></div>
+      </div>
+      
+      <div class="mySlides">
+        <img src="slideshow-3.jpeg" style="height:100%;width:100%">
+        <div class="slideshow-text"></div>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    <div class = "product-breakdown">
+      <h3>Bar 1</h3>
+      <h2>Never Say X</h2>
+      <h4 class="product-text">Spring into action with Baron Smith's new Bar 1s. Feel the freedom of doing anything on the basketball court. The shiny leather and bouncy new foam will let elevate your game all-around.</h4>
+      <button class="inverse-shop-button">Shop Bar 1s</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
