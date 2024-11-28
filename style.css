@@ -64,6 +64,7 @@ nav{
     padding: 15px;
   }
 
+  /* Homepage  */
 .image-container {
   position: relative;
   display: flex;
@@ -115,6 +116,8 @@ nav{
 
 .shop-button:hover {
   background-color: #00274D;
+  outline-style:solid;
+  outline-color: #ffffff;
   color: white;
 }
 
@@ -171,7 +174,7 @@ nav{
   border-radius: 10px;
 }
 
-.scroll-item {
+.rounded-item {
   flex: 0 0 300px;
   height: 300px;
   margin-top: 10px;
@@ -188,7 +191,7 @@ nav{
   transition: transform 0.2s;
 }
 
-.scroll-item:hover {
+.rounded-item:hover {
   transform: scale(1.05);
 }
 
@@ -260,9 +263,10 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: first baseline;
+  justify-content:baseline;
   align-items: flex-start;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
   background-color: #ddd;
   border-radius: 10px;
@@ -274,7 +278,7 @@ img {
 
 .scroll-by-sports-button {
   background-color: #ffffff;
-  color: #00509E;
+  color: #00274D;
   border: none;
   padding: 8px 30px;
   font-size: 1rem;
@@ -285,7 +289,9 @@ img {
 }
 
 .scroll-by-sports-button:hover {
-  background-color: #c8c8c8;
+  outline-style: solid;
+  outline-color: #ffffff;
+  transform: scale(1.1);
 }
 
 .slideshow-container {
@@ -342,4 +348,88 @@ img {
   color:#00274D;
   max-width: 800px;
   text-align: center;
+}
+
+/* Shoes Page */
+.dropdown {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  gap: 20px;
+}
+
+.dropdown-content.active {
+  display: block;
+}
+
+.dropdown-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.dropbtn {
+  background-color: #00274D;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropbtn:hover {
+  transform: scale(1.05);
+}
+
+.filters {
+  position: fixed;
+  top: 150px;
+  left: 15px;
+  padding: 20px;
+  margin-left: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 200px;
+}
+
+.filters h3 {
+  font-size: 1.2em;
+  color: #00274D;
+}
+.submit-btn {
+  background-color: #00509E;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #1365b6;
+  transform: scale(1.05);
+}
+
+.shoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
 }
