@@ -3,11 +3,85 @@
 <head>  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cross-X</title>
+  <title>Cross-X</title>
+  <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: #f1f1f1;">
+
+    <div class="banner">
+        <a href="index.html">
+        <h1>cross-x</h1>
+        </a>
+    </div>
+    <header class="navbar">
+    <a class="logo" href="http://127.0.0.1:5500/index.html">X</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="shoes.html">Shoes</a>
+    </nav>
+    <div>
+        <div style="padding: 15px;"><a href="#">Profile</a></div>
+    </div>
+    </header>
+
+    <div class = "padding-section">
+        <div class="filters">
+            <h3>Filters</h3>
+            <div class="dropdown">
+              <button class="dropbtn">Gender</button>
+              <div class="dropdown-content">
+                <label><input type="checkbox" name="gender" value="Men"> Men</label>
+                <label><input type="checkbox" name="gender" value="Women"> Women</label>
+                <label><input type="checkbox" name="gender" value="Unisex"> Unisex</label>
+              </div>
+            </div>
+          
+            <div class="dropdown">
+              <button class="dropbtn">Price</button>
+              <div class="dropdown-content">
+                <label><input type="checkbox" name="price" value="50-100"> $50 - $100</label>
+                <label><input type="checkbox" name="price" value="100-150"> $100 - $150</label>
+                <label><input type="checkbox" name="price" value="150-200"> $150 - $200</label>
+              </div>
+            </div>
+          
+            <div class="dropdown">
+              <button class="dropbtn">Sports</button>
+              <div class="dropdown-content">
+                <label><input type="checkbox" name="sport" value="Basketball"> Basketball</label>
+                <label><input type="checkbox" name="sport" value="Football"> Football</label>
+                <label><input type="checkbox" name="sport" value="Gym"> Gym</label>
+                <label><input type="checkbox" name="sport" value="Tennis"> Tennis</label>
+                <label><input type="checkbox" name="sport" value="Track"> Track</label>
+              </div>
+            </div>
+          
+            <div class="dropdown">
+              <button class="dropbtn">Size</button>
+              <div class="dropdown-content">
+                <label><input type="checkbox" name="size" value="US4"> US4</label>
+                <label><input type="checkbox" name="size" value="US5"> US5</label>
+                <label><input type="checkbox" name="size" value="US6"> US6</label>
+                <label><input type="checkbox" name="size" value="US7"> US7</label>
+                <label><input type="checkbox" name="size" value="US8"> US8</label>
+                <label><input type="checkbox" name="size" value="US9"> US9</label>
+                <label><input type="checkbox" name="size" value="US10"> US10</label>
+                <label><input type="checkbox" name="size" value="US11"> US11</label>
+                <label><input type="checkbox" name="size" value="US12"> US12</label>
+                <label><input type="checkbox" name="size" value="US13"> US13</label>
+              </div>
+            </div>
+          
+            <button id="submitFilters" class="submit-btn">Apply Filters</button>
+          </div>
+          <div class="shoes"></div>
+          
+        
 
 
-    <script src="script.js"></script>
+<script src="shoescript.js"></script>
 </body>
