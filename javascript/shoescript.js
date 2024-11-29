@@ -26,16 +26,16 @@ class Shoe {
 }}
 
 const shoes = [
-new Shoe("Bar 1", 120, "Men", "Basketball", "US10", "https://via.placeholder.com/200"),
-new Shoe("Cronaldo Aces", 140, "Men", "Football", "US9", "https://via.placeholder.com/200"),
-new Shoe("Gym Junkie", 80, "Women", "Gym", "US10", "https://via.placeholder.com/200"),
-new Shoe("John 2", 110, "Women", "Tennis", "US7", "https://via.placeholder.com/200"),
-new Shoe("Track Sprinter", 130, "Men", "Track", "US11", "https://via.placeholder.com/200"),
-new Shoe("LeFrog 1s", 150, "Unisex", "Basketball", "US12", "https://via.placeholder.com/200"),
-new Shoe("Zoom Cleats", 100, "Unisex", "Football", "US11", "https://via.placeholder.com/200"),
-new Shoe("Ripppped", 75, "Men", "Gym", "US13", "https://via.placeholder.com/200"),
-new Shoe("Tennis Smash", 95, "Women", "Tennis", "US5", "https://via.placeholder.com/200"),
-new Shoe("Lylefly 4", 120, "Unisex", "Track", "US13", "https://via.placeholder.com/200"),
+new Shoe("Bar 1", 120, "Men", "Basketball", "US10", "Bar-1.jpeg"),
+new Shoe("Cronaldo Aces", 140, "Men", "Football", "US9", "Cronaldo-Aces.jpeg"),
+new Shoe("Gym Junkie", 80, "Women", "Gym", "US10", "Gym-Junkie.png"),
+new Shoe("John 2", 110, "Women", "Tennis", "US7", "John-2.png"),
+new Shoe("Track Sprinter", 130, "Men", "Track", "US11", "Track-Sprinter.jpeg"),
+new Shoe("LeFrog 1s", 150, "Unisex", "Basketball", "US12", "LeFrog-1s.jpeg"),
+new Shoe("Zoom Cleats", 100, "Unisex", "Football", "US11", "Zoom-Cleats.jpeg"),
+new Shoe("Ripppped", 75, "Men", "Gym", "US13", "Ripppped.png"),
+new Shoe("Tennis Smash", 95, "Women", "Tennis", "US5", "Tennis-Smash.png"),
+new Shoe("Lylefly 4", 120, "Unisex", "Track", "US13", "Lylefly-4.png"),
 ];
 
 function displayShoes(filteredShoes = shoes) {
@@ -53,24 +53,24 @@ function displayShoes(filteredShoes = shoes) {
         const shoeName = document.createElement('h3');
         shoeName.textContent = shoe.name;
 
-        const shoePrice = document.createElement('p');
-        shoePrice.textContent = `Price: $${shoe.price}`;
-
         const shoeGender = document.createElement('p');
-        shoeGender.textContent = `Gender: ${shoe.gender}`;
+        shoeGender.textContent = `${shoe.gender} `;
 
         const shoeSport = document.createElement('p');
-        shoeSport.textContent = `Sport: ${shoe.sport}`;
+        shoeSport.textContent = `${shoe.sport} `;
 
         const shoeSize = document.createElement('p');
-        shoeSize.textContent = `Size: ${shoe.size}`;
+        shoeSize.textContent = `${shoe.size} `;
+
+        const shoePrice = document.createElement('h3');
+        shoePrice.textContent = `$${shoe.price} `;
 
         roundedItem.appendChild(img);
         roundedItem.appendChild(shoeName);
-        roundedItem.appendChild(shoePrice);
         roundedItem.appendChild(shoeGender);
         roundedItem.appendChild(shoeSport);
         roundedItem.appendChild(shoeSize);
+        roundedItem.appendChild(shoePrice);
 
         shoesContainer.appendChild(roundedItem);
 });
