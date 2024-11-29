@@ -26,33 +26,53 @@ class Shoe {
 }}
 
 const shoes = [
-new Shoe("Bar 1", 120, "Men", "Basketball", "US10", "cross-x-main-image.jpeg"),
-new Shoe("Cronaldo Aces", 140, "Men", "Football", "US9", "cross-x-main-image.jpeg"),
+new Shoe("Bar 1", 120, "Men", "Basketball", "US10", "https://via.placeholder.com/200"),
+new Shoe("Cronaldo Aces", 140, "Men", "Football", "US9", "https://via.placeholder.com/200"),
 new Shoe("Gym Junkie", 80, "Women", "Gym", "US10", "https://via.placeholder.com/200"),
-new Shoe("John 2", 110, "Women", "Tennis", "US9", "https://via.placeholder.com/200"),
+new Shoe("John 2", 110, "Women", "Tennis", "US7", "https://via.placeholder.com/200"),
 new Shoe("Track Sprinter", 130, "Men", "Track", "US11", "https://via.placeholder.com/200"),
 new Shoe("LeFrog 1s", 150, "Unisex", "Basketball", "US12", "https://via.placeholder.com/200"),
 new Shoe("Zoom Cleats", 100, "Unisex", "Football", "US11", "https://via.placeholder.com/200"),
-new Shoe("Gym Flats", 75, "Men", "Gym", "US13", "https://via.placeholder.com/200"),
+new Shoe("Ripppped", 75, "Men", "Gym", "US13", "https://via.placeholder.com/200"),
 new Shoe("Tennis Smash", 95, "Women", "Tennis", "US5", "https://via.placeholder.com/200"),
 new Shoe("Lylefly 4", 120, "Unisex", "Track", "US13", "https://via.placeholder.com/200"),
 ];
 
 function displayShoes(filteredShoes = shoes) {
-const shoesContainer = document.querySelector(".shoes");
-shoesContainer.innerHTML = "";
-const template = document.getElementById("shoe-template");
+    const shoesContainer = document.querySelector(".shoes-container");
+    shoesContainer.innerHTML = "";
+    const template = document.getElementById("shoe-template");
+    filteredShoes.forEach((shoe) => {
+        const roundedItem = document.createElement('div');
+        roundedItem.classList.add("rounded-item");
 
-filteredShoes.forEach((shoe) => {
-    const shoeCard = template.content.cloneNode(true);
-    shoeCard.querySelector("img").src = shoe.image;
-    shoeCard.querySelector("img").alt = shoe.name;
-    shoeCard.querySelector(".shoe-name").textContent = shoe.name;
-    shoeCard.querySelector(".shoe-price").textContent = `Price: $${shoe.price}`;
-    shoeCard.querySelector(".shoe-gender").textContent = `Gender: ${shoe.gender}`;
-    shoeCard.querySelector(".shoe-sport").textContent = `Sport: ${shoe.sport}`;
-    shoeCard.querySelector(".shoe-size").textContent = `Size: ${shoe.size}`;
-    shoesContainer.appendChild(shoeCard);
+        const img = document.createElement('img');
+        img.src = shoe.image;
+        img.alt = shoe.name;
+        
+        const shoeName = document.createElement('h3');
+        shoeName.textContent = shoe.name;
+
+        const shoePrice = document.createElement('p');
+        shoePrice.textContent = `Price: $${shoe.price}`;
+
+        const shoeGender = document.createElement('p');
+        shoeGender.textContent = `Gender: ${shoe.gender}`;
+
+        const shoeSport = document.createElement('p');
+        shoeSport.textContent = `Sport: ${shoe.sport}`;
+
+        const shoeSize = document.createElement('p');
+        shoeSize.textContent = `Size: ${shoe.size}`;
+
+        roundedItem.appendChild(img);
+        roundedItem.appendChild(shoeName);
+        roundedItem.appendChild(shoePrice);
+        roundedItem.appendChild(shoeGender);
+        roundedItem.appendChild(shoeSport);
+        roundedItem.appendChild(shoeSize);
+
+        shoesContainer.appendChild(roundedItem);
 });
 }
 
@@ -64,9 +84,7 @@ const selectedSizes = Array.from(document.querySelectorAll('input[name="size"]:c
 
 const filteredShoes = shoes.filter((shoe) => {
     const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(shoe.gender);
-    const priceMatch =
-    selectedPrices.length === 0 ||
-    selectedPrices.some((range) => {
+    const priceMatch = selectedPrices.length === 0 || selectedPrices.some((range) => {
         const [min, max] = range.split("-").map(Number);
         return shoe.price >= min && shoe.price <= max;
     });
