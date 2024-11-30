@@ -41,7 +41,7 @@ new Shoe("Lylefly 4", 120, "Unisex", "Track", "US13", "Lylefly-4.png"),
 function displayShoes(filteredShoes = shoes) {
     const shoesContainer = document.querySelector(".shoes-container");
     shoesContainer.innerHTML = "";
-    const template = document.getElementById("shoe-template");
+
     filteredShoes.forEach((shoe) => {
         const roundedItem = document.createElement('div');
         roundedItem.classList.add("rounded-item-displayshoes");
@@ -50,6 +50,7 @@ function displayShoes(filteredShoes = shoes) {
         img.src = shoe.image;
         img.alt = shoe.name;
         
+        // shoe details
         const shoeName = document.createElement('h3');
         shoeName.textContent = shoe.name;
 
@@ -65,17 +66,73 @@ function displayShoes(filteredShoes = shoes) {
         const shoePrice = document.createElement('h3');
         shoePrice.textContent = `$${shoe.price} `;
 
+        // adding to cart part
+        const quantitySelector = document.createElement('div');
+        quantitySelector.classList.add('quantity-selector');
+
+        const decreaseBtn = document.createElement('button');
+        decreaseBtn.textContent = '-';
+        decreaseBtn.addEventListener('click', () => updateQuantity(shoe, -1));
+
+        const quantityDisplay = document.createElement('span');
+        quantityDisplay.textContent = '0';
+
+        const increaseBtn = document.createElement('button');
+        increaseBtn.textContent = '+';
+        increaseBtn.addEventListener('click', () => updateQuantity(shoe, 1));
+
+        quantitySelector.appendChild(decreaseBtn);
+        quantitySelector.appendChild(quantityDisplay);
+        quantitySelector.appendChild(increaseBtn);
+
+
+        const addToCartBtn = document.createElement('button');
+        addToCartBtn.classList.add('add-to-cart');
+        addToCartBtn.textContent = 'Add to Cart';
+        addToCartBtn.addEventListener("click", () => addToCart(shoe, quantityDisplay));
+
+        function updateQuantity(shoe, change) {
+          const quantityDisplay = quantitySelector.querySelector('span');
+          let currentQuantity = parseInt(quantityDisplay.textContent);
+          currentQuantity = Math.max(0, currentQuantity + change);
+          quantityDisplay.textContent = currentQuantity;
+          shoe.quantity = currentQuantity;
+        }
+        
+        function addToCart(shoe, quantityDisplay) {
+          const quantity = parseInt(quantityDisplay.textContent);
+          if (quantity > 0) {
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            const existingItem = cartItems.find((item) => item.name === shoe.name);
+            if (existingItem) {
+              existingItem.quantity += quantity;
+            } 
+            else {
+              cartItems.push({ ...shoe, quantity });
+            }
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            console.log("Cart items saved:", cartItems);
+            alert(`${quantity} ${shoe.name} added to cart!`);
+          } 
+          else {
+            alert("Please select a quantity greater than 0.");
+          }
+        }
+
         roundedItem.appendChild(img);
         roundedItem.appendChild(shoeName);
         roundedItem.appendChild(shoeGender);
         roundedItem.appendChild(shoeSport);
         roundedItem.appendChild(shoeSize);
         roundedItem.appendChild(shoePrice);
+        roundedItem.appendChild(quantitySelector);
+        roundedItem.appendChild(addToCartBtn);
 
         shoesContainer.appendChild(roundedItem);
 });
 }
 
+//filter part
 function filterShoes() {
 const selectedGenders = Array.from(document.querySelectorAll('input[name="gender"]:checked')).map((cb) => cb.value);
 const selectedPrices = Array.from(document.querySelectorAll('input[name="price"]:checked')).map((cb) => cb.value);
@@ -101,5 +158,49 @@ document.getElementById("apply-filters").addEventListener("click", filterShoes);
 
 displayShoes();
 
-// Add to cart part
 
+//cart part
+function renderCart() {
+  const cartContainer = document.getElementById("cart-container");
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  cartContainer.innerHTML = "";
+
+  if (cartItems.length === 0) {
+      const emptyMessage = document.createElement("p");
+      emptyMessage.classList.add("empty-cart");
+      emptyMessage.textContent = "Your cart is empty. Add some shoes to your cart!";
+      cartContainer.appendChild(emptyMessage);
+  } else {
+      const cartItemsContainer = document.createElement("div");
+      cartItemsContainer.classList.add("cart-items");
+
+      let totalPrice = 0;
+
+      cartItems.forEach((item) => {
+          const cartItem = document.createElement("div");
+          cartItem.classList.add("cart-item");
+
+          const itemDetails = document.createElement("h4");
+          itemDetails.textContent = `${item.name} x${item.quantity}`;
+
+          const itemPrice = document.createElement("p");
+          itemPrice.textContent = `$${item.price * item.quantity}`;
+
+          totalPrice += item.price * item.quantity;
+
+          cartItem.appendChild(itemDetails);
+          cartItem.appendChild(itemPrice);
+          cartItemsContainer.appendChild(cartItem);
+      });
+
+      cartContainer.appendChild(cartItemsContainer);
+
+      const cartTotal = document.createElement("div");
+      cartTotal.classList.add("cart-total");
+      cartTotal.textContent = `Total: $${totalPrice}`;
+      cartContainer.appendChild(cartTotal);
+  }
+}
+
+renderCart();
