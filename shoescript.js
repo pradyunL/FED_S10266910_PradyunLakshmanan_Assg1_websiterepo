@@ -207,6 +207,11 @@ function renderCart() {
       cartTotal.textContent = `Total: $${totalPrice}`;
       cartContainer.appendChild(cartTotal);
 
+      const checkoutButton = document.createElement("button");
+      checkoutButton.classList.add("checkout-button");
+      checkoutButton.textContent = "Checkout";
+      cartContainer.appendChild(checkoutButton);
+
   }
 }
 

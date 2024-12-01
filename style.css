@@ -543,7 +543,7 @@ a {
   color:#00274D;
 }
 
-/* Add to cart section inside  */
+/* Add to cart section inside shoes page */
 
 .cart-button {
   color: white;
@@ -618,7 +618,7 @@ a {
 }
 
 .cart-container {
-  margin-top: 40px;
+  margin-top: 100px;
 }
 
 .cart-items {
@@ -646,6 +646,26 @@ a {
   font-size: 18px;
   font-weight: bold;
   color:#00274D;
+}
+
+.checkout-button {
+  background-color: #00274D;
+  color: #ffffff;
+  border: none;
+  padding: 24px 60px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.checkout-button:hover {
+  background-color: #ffffff;
+  outline-style:solid;
+  outline-color: #00274D;
+  color: #00274D;
 }
 
 /* Media Queries */
@@ -868,10 +888,96 @@ a {
     height: 14px;
     width: 14px;
   }
+
+}
+
+@media(max-width:1039px){
+  /* shoes page media queries */
+  .rounded-item-displayshoes {
+    width: 290px;
+    height: 500px;
+  }
+
+  .rounded-item-displayshoes img {
+    width: 83%;
+    height: 47%;
+  }
+}
+
+@media(max-width:1019px){
+  .rounded-item-displayshoes {
+    width: 270px;
+    height: 490px;
+  }
+
+  .rounded-item-displayshoes img {
+    width: 83%;
+    height: 47%;
+  }
+}
+
+@media(max-width:979px){
+
+  .filters,filters h3, .dropdown-content, .dropdown-content label, .dropbtn, .submit-btn{
+    font-size: 80%;
+  }
+
+
+
+  .rounded-item-displayshoes {
+    width: 160px;
+    height: 300px;
+  }
+
+  .rounded-item-displayshoes img {
+    width: 60%;
+    height: 30%;
+  }
+
+  .rounded-item-displayshoes h3 {
+    font-size: 13px;
+  }
+
+  .rounded-item-displayshoes p {
+    font-size: 11px;
+  }
+
+  .add-to-cart {
+    padding: 3px 7px;
+    font-size: 11px;
+  }
+
+  .quantity-selector button {
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 1px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+  
+  .quantity-selector span {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+
+  .hamburger-dropdown a{
+    font-size: 0.8rem;
+  }
 
   .image-container {
     flex-direction: column;
@@ -978,6 +1084,7 @@ a {
   }
 
   /* Slideshow Section */
+
   .slideshow-container {
     max-width: 100%;
     position: relative;
@@ -1028,10 +1135,153 @@ a {
   .product-breakdown h4 {
     font-size: 0.9rem;
   }
+
+
+/* shoes page media queries */
+
+  .add-to-cart {
+    padding: 5px 13px;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .quantity-selector button {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-radius: 20px;
+  }
+
+  .quantity-selector span {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  .rounded-item-displayshoes h3 {
+    font-size: 16px;
+  }
+
+  .rounded-item-displayshoes p {
+    font-size: 14px;
+  }
+
+  .rounded-item-displayshoes {
+    width: 260px;
+    height: 440px;
+  }
+
+  .rounded-item-displayshoes img {
+    width: 80%;
+    height: 50%;
+  }
+
+  .filters {
+    position: static;
+    top: 160px;
+    left: 50%;
+    transform: translateX(0%);
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .filters h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #00274D;
+    text-align: left;
+    transform: translateX(0%);
+  }
+
+  .dropdown {
+    position: relative;
+    margin-bottom: 15px;
+    transform: translateX(0%);
+  }
+
+  .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #ffffff;
+    color: #00274D;
+    left: 0;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    gap: 20px;
+    transform: translateX(0%);
+  }
+
+  .dropdown-content.active {
+    display: block;
+  }
+
+  .dropdown-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .dropbtn {
+    background-color: #00274D;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .dropbtn:hover {
+    transform: scale(1.05);
+  }
+
+  .submit-btn {
+    background-color: #00509E;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    font-size: medium;
+  }
+
+  .submit-btn:hover {
+    background-color: #1365b6;
+    transform: scale(1.05);
+  }
+
+  .shoes-container {
+    margin-left: 0;
+    justify-content: center;
+  }
 }
 
 /* Small Mobile Styles */
 @media (max-width: 480px) {
+  .hamburger-dropdown a{
+    font-size: 0.7rem;
+  }
 
   .image-container{
     margin-top: 0px;
@@ -1139,5 +1389,116 @@ a {
 
   .product-breakdown h4 {
     font-size: 0.8rem;
+  }
+
+  /* shoes page media queries */
+
+  .rounded-item-displayshoes h3 {
+    font-size: 16px;
+  }
+
+  .rounded-item-displayshoes p {
+    font-size: 14px;
+  }
+
+  .rounded-item-displayshoes {
+    width: 300px;
+    height: 440px;
+  }
+
+  .rounded-item-displayshoes img {
+    width: 75%;
+    height: 45%;
+  }
+
+  .filters {
+    position: static;
+    top: 160px;
+    left: 50%;
+    transform: translateX(0%);
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .filters h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #00274D;
+    text-align: left;
+    transform: translateX(0%);
+  }
+
+  .dropdown {
+    position: relative;
+    margin-bottom: 15px;
+    transform: translateX(0%);
+  }
+
+  .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #ffffff;
+    color: #00274D;
+    left: 0;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    gap: 20px;
+    transform: translateX(0%);
+  }
+
+  .dropdown-content.active {
+    display: block;
+  }
+
+  .dropdown-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .dropbtn {
+    background-color: #00274D;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .dropbtn:hover {
+    transform: scale(1.05);
+  }
+
+  .submit-btn {
+    background-color: #00509E;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    font-size: medium;
+  }
+
+  .submit-btn:hover {
+    background-color: #1365b6;
+    transform: scale(1.05);
+  }
+
+  .shoes-container {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .shoes-container {
+    justify-content: center;
   }
 }
