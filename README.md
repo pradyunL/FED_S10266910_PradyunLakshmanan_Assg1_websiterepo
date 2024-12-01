@@ -53,9 +53,11 @@ Bug Reports:
 # --Credits--
 1.Content
 ...
+
 2.Media
 Images obtained from Microsoft Designer AI, Canva Magic Design Image Generator and Dall-E 3
+
 3.Acknowledgements
-Inspiration from website is from Nike official website
-Learnt how to do slideshow in Javascript for homepage from W3Schools
+Inspiration from website is from Nike official website,
+Learnt how to do slideshow in Javascript for homepage from W3Schools,
 Part of Add to Cart and Shoe filtering sections from ChatGPT
