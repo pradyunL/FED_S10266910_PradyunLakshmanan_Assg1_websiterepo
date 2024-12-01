@@ -23,10 +23,12 @@ Existing Features
 
 # --Technologies--
 HTML5: For structuring content and creating semantic web pages.
+
 CSS3: To style and create a visually appealing, responsive design.
+
 JavaScript: For interactivity, including dynamic cart functionality and filter behavior.
-FontAwesome: For visually striking icons (e.g., cart and hamburger menu). Visit FontAwesome
-Normalize.css: To ensure consistent styling across different browsers. Visit Normalize.css
+
+FontAwesome: For visually striking icons (e.g., cart and hamburger menu). Visit [FontAwesome](https://fontawesome.com/)
 
 # --Testing--
 Filters:
