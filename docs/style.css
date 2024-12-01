@@ -265,26 +265,14 @@ a {
 .product-images {
   flex: 3;
   display: grid;
-  grid-template-areas:
-    "model normal"
-    "model angle";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 0;
-}
-.model-image {
-  grid-area: model;
-  background-color: #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #333;
+  height: 100%;
 }
 
+.model-image,
 .normal-angle-image {
-  grid-area: normal;
   background-color: #ddd;
   display: flex;
   justify-content: center;
@@ -292,17 +280,15 @@ a {
   text-align: center;
   font-size: 0.9rem;
   color: #333;
+  height: 100%;
+  overflow: hidden;
 }
 
-.different-angle-image {
-  grid-area: angle;
-  background-color: #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #333;
+.model-image img,
+.normal-angle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
 }
 
 .scroll-by-sports {
@@ -661,7 +647,8 @@ a {
   color:#00274D;
 }
 
-@media (max-width: 1461px) {
+/* screen size 1461 */
+/* @media (max-width: 1461px) {
   body{
     overflow-x: hidden;
   }
@@ -671,12 +658,12 @@ a {
   }
 
   .image-container{
-    padding-top: 0px;
+    padding-top: 30px;
   }
 
   .bg-image{
-    width: 100%;
-    height: 80%;
+    width: 1461px;
+    height: 900px;
   }
 
   .bg-text {
@@ -684,4 +671,534 @@ a {
     height: 25%;
   }
 
+} */
+
+/* screen size 1277 */
+/* @media(max-width: 1277px){
+  .navbar .logo {
+      font-size: 1.7rem;
+  }
+
+  .image-container{
+    padding-top: 30px;
+    width: 100%;
+    height: 10%;
+  }
+
+  .bg-image{
+    width: 100%;
+    height: 40%;
+  }
+
+  .bg-text {
+    width: 60%;
+    height: 25%;
+    font-size: ;
+  }
+
+  .bg-text h1{
+    font-size: large;
+  }
+
+  .shop-button {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+
+} */
+
+
+/* screen size 1024 */
+/* @media(max-width: 1063px){
+  .navbar .logo {
+      font-size: 1.7rem;
+  }
+
+  .image-container{
+    padding-top: 30px;
+    width: 100%;
+    height: 10%;
+  }
+
+  .bg-image{
+    width: 90%;
+    height: 40%;
+  }
+
+
+  .bg-text {
+    width: 60%;
+    height: 25%;
+  }
+
+} */
+
+@media (max-width: 1200px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .hamburger-icon {
+    font-size: 1.2rem;
+  }
+
+  .bg-text {
+    width: 70%;
+    height: 30%;
+  }
+
+  .bg-text h1 {
+    font-size: large;
+  }
+
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .scroll-container {
+    gap: 10px;
+  }
+
+  .rounded-item {
+    flex: 0 0 250px;
+    height: 250px;
+  }
+
+  .shop-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .inverse-shop-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .product-section {
+    display: flex;
+    height: 400px;
+  }
+
+  .product-description {
+    flex: 2;
+    padding: 20px;
+    font-size: 1.2rem;
+  }
+
+  .product-images {
+    flex: 3;
+    display: grid;
+    grid-template-areas:
+      "model normal"
+      "model angle";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .model-image, .normal-angle-image, .different-angle-image {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .scroll-by-sports {
+    flex: 1 1 20%;
+    height: 300px;
+  }
+
+  .scroll-by-sports img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .scroll-by-sports-button {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #00274D;
+    border: none;
+    padding: 10px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    transition-duration: 0.4s;
+  }
+
+  .slideshow-text {
+    font-size: 30px;
+  }
+
+  .dot {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+
+  .hamburger-icon {
+    font-size: 1.3rem;
+  }
+
+  .bg-text {
+    width: 80%;
+    height: 35%;
+  }
+
+  .bg-text h1 {
+    font-size: medium;
+  }
+
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .scroll-container {
+    gap: 5px;
+  }
+
+  .rounded-item {
+    flex: 0 0 220px;
+    height: 220px;
+  }
+
+  .shop-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .product-section {
+    display: flex;
+    height: 400px;
+  }
+
+  .product-description {
+    flex: 2;
+    padding: 20px;
+    font-size: 1.1rem;
+  }
+
+  .product-images {
+    flex: 3;
+    display: grid;
+    grid-template-areas:
+      "model normal"
+      "model angle";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .model-image, .normal-angle-image, .different-angle-image {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  .scroll-by-sports {
+    flex: 1 1 25%;
+    height: 280px;
+  }
+
+  .scroll-by-sports img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .scroll-by-sports-button {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #00274D;
+    border: none;
+    padding: 8px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    transition-duration: 0.4s;
+  }
+
+  .slideshow-text {
+    font-size: 25px;
+  }
+
+  .dot {
+    height: 14px;
+    width: 14px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger-icon {
+    font-size: 1.5rem;
+  }
+
+  .bg-text {
+    width: 90%;
+    height: 40%;
+    padding: 10px;
+  }
+
+  .bg-text h1 {
+    font-size: medium;
+  }
+
+  .section-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .scroll-container {
+    gap: 5px;
+  }
+
+  .rounded-item {
+    flex: 0 0 180px;
+    height: 180px;
+  }
+
+  .shop-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .product-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .product-description {
+    flex: 1;
+    padding: 15px;
+  }
+
+  .product-images {
+    flex: 1;
+    grid-template-areas:
+      "model"
+      "normal"
+      "angle";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 15px;
+  }
+
+  .model-image, .normal-angle-image, .different-angle-image {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #333;
+  }
+
+  /* Shop By Sport Section */
+  .scroll-by-sports {
+    flex: 1 1 80%;
+    height: 220px;
+  }
+
+  .scroll-by-sports img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .scroll-by-sports-button {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #00274D;
+    border: none;
+    padding: 6px 24px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 20px;
+    bottom: 20px;
+    left: 20px;
+    transition-duration: 0.4s;
+  }
+
+  .scroll-by-sports-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  /* Slideshow Section */
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+  }
+
+  .slideshow-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .slideshow-text {
+    color: #f2f2f2;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s;
+  }
+
+  .active {
+    background-color: #717171;
+    transform: scale(1.2);
+  }
+
+  /* Product Breakdown Section */
+  .product-breakdown h3 {
+    font-size: 1.2rem;
+  }
+
+  .product-breakdown h2 {
+    font-size: 1.6rem;
+  }
+
+  .product-breakdown h4 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+
+  .hamburger-icon {
+    font-size: 1.2rem;
+  }
+
+  .bg-text {
+    width: 100%;
+    height: 45%;
+    padding: 10px;
+  }
+
+  .bg-text h1 {
+    font-size: small;
+  }
+
+  .section-header h2 {
+    font-size: 1rem;
+  }
+
+  .scroll-container {
+    gap: 5px;
+  }
+
+  .rounded-item {
+    flex: 0 0 160px;
+    height: 160px;
+  }
+
+  .shop-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .product-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .product-description {
+    flex: 1;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .product-images {
+    flex: 1;
+    grid-template-areas:
+      "model"
+      "normal"
+      "angle";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+  }
+
+  .model-image, .normal-angle-image, .different-angle-image {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #333;
+  }
+
+  .scroll-by-sports {
+    flex: 1 1 100%;
+    height: 180px;
+  }
+
+  .scroll-by-sports img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .scroll-by-sports-button {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #00274D;
+    border: none;
+    padding: 5px 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+    bottom: 15px;
+    left: 15px;
+    transition-duration: 0.4s;
+  }
+
+  .slideshow-text {
+    font-size: 14px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
+
+  .product-breakdown h3 {
+    font-size: 1rem;
+  }
+
+  .product-breakdown h2 {
+    font-size: 1.3rem;
+  }
+
+  .product-breakdown h4 {
+    font-size: 0.8rem;
+  }
 }
