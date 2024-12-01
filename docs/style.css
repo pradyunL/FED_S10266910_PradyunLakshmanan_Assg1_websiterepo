@@ -56,7 +56,6 @@ a {
 }
 
 .hamburger-icon {
-  display: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -81,6 +80,7 @@ a {
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  z-index: 999;
 }
 
 .hamburger-dropdown a {
@@ -103,7 +103,7 @@ a {
   display: flex;
   padding-top: 30px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -617,17 +617,10 @@ a {
   margin: 0 auto;
 }
 
-container h1{
+.container-for-addtocart h1{
   font-size: 2rem;
   font-weight: bold;
   color: #00274D;
-}
-
-.shoes-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
 }
 
 .empty-cart {
@@ -647,6 +640,7 @@ container h1{
   padding: 16px;
   max-height: 300px;
   overflow-y: auto;
+  color:#00274D;
 }
 
 .cart-item {
@@ -664,47 +658,30 @@ container h1{
   margin-top: 20px;
   font-size: 18px;
   font-weight: bold;
+  color:#00274D;
 }
 
 @media (max-width: 1461px) {
+  body{
+    overflow-x: hidden;
+  }
+
   .navbar .logo {
       font-size: 1.4rem;
   }
 
-  nav {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      background-color: #00274D;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: right;
+  .image-container{
+    padding-top: 0px;
   }
 
-  nav a {
-      display: block;
-      padding: 15px;
-      text-align: right;
-      font-size: 1.2rem;
-      color: white;
+  .bg-image{
+    width: 100%;
+    height: 80%;
   }
 
-  .hamburger-icon {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  .bg-text {
+    width: 60%;
+    height: 25%;
   }
 
-  .hamburger-dropdown {
-    display: none;
-  }
-
-  .hamburger-dropdown.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-  }
 }

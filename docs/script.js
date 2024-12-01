@@ -7,6 +7,12 @@ function showSlides() {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
+
+  if (slides.length === 0 || dots.length === 0) {
+    console.error("Slides or dots not found!");
+    return;
+  }
+
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
   }
@@ -29,14 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburgerIcon = document.querySelector(".hamburger-icon");
   const hamburgerDropdown = document.querySelector(".hamburger-dropdown");
 
-  hamburgerIcon.addEventListener("click", () => {
-    const isMenuVisible = hamburgerDropdown.classList.contains("active");
-    if (isMenuVisible) {
-      hamburgerDropdown.classList.remove("active");
-    } else {
-      hamburgerDropdown.classList.add("active");
-    }
-  });
+  if (hamburgerIcon && hamburgerDropdown) {
+    hamburgerIcon.addEventListener("click", () => {
+      hamburgerDropdown.classList.toggle("active");
+    });
+  }
 
   document.addEventListener("click", (event) => {
     if (
@@ -47,4 +50,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
   
