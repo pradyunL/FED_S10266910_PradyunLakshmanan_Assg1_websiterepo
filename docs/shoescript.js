@@ -26,16 +26,16 @@ class Shoe {
 }}
 
 const shoes = [
-new Shoe("Bar 1", 120, "Men", "Basketball", "US10", "Bar-1.jpeg"),
+new Shoe("Bar 1s", 120, "Men", "Basketball", "US10", "Bar-1.jpeg"),
 new Shoe("Cronaldo Aces", 140, "Men", "Football", "US9", "Cronaldo-Aces.jpeg"),
-new Shoe("Gym Junkie", 80, "Women", "Gym", "US10", "Gym-Junkie.png"),
-new Shoe("John 2", 110, "Women", "Tennis", "US7", "John-2.png"),
-new Shoe("Track Sprinter", 130, "Men", "Track", "US11", "Track-Sprinter.png"),
+new Shoe("Gym Junkies", 80, "Women", "Gym", "US10", "Gym-Junkie.png"),
+new Shoe("John 2s", 110, "Women", "Tennis", "US7", "John-2.png"),
+new Shoe("Track Sprinters", 130, "Men", "Track", "US11", "Track-Sprinter.png"),
 new Shoe("LeFrog 1s", 150, "Unisex", "Basketball", "US12", "LeFrog-1s.jpeg"),
 new Shoe("Zoom Cleats", 100, "Unisex", "Football", "US11", "Zoom-Cleats.jpeg"),
 new Shoe("Ripppped", 75, "Men", "Gym", "US13", "Ripppped.png"),
-new Shoe("Tennis Smash", 95, "Women", "Tennis", "US5", "Tennis-Smash.png"),
-new Shoe("Lylefly 4", 120, "Unisex", "Track", "US13", "Lylefly-4.png"),
+new Shoe("Tennis Smashes", 95, "Women", "Tennis", "US5", "Tennis-Smash.png"),
+new Shoe("Lylefly 4s", 120, "Unisex", "Track", "US13", "Lylefly-4.png"),
 ];
 
 function displayShoes(filteredShoes = shoes) {
@@ -102,15 +102,15 @@ function displayShoes(filteredShoes = shoes) {
         function addToCart(shoe, quantityDisplay) {
           const quantity = parseInt(quantityDisplay.textContent);
           if (quantity > 0) {
-            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            const cartItems = JSON.parse(sessionStorage.getItem("cartItems")) || [];
             const existingItem = cartItems.find((item) => item.name === shoe.name);
             if (existingItem) {
               existingItem.quantity += quantity;
             } 
             else {
-              cartItems.push({ ...shoe, quantity });
+              cartItems.push({ ...shoe, quantity});
             }
-            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
             console.log("Cart items saved:", cartItems);
             alert(`${quantity} ${shoe.name} added to cart!`);
           } 
@@ -162,7 +162,13 @@ displayShoes();
 //cart part
 function renderCart() {
   const cartContainer = document.getElementById("cart-container");
-  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  if (!cartContainer) {
+    console.error("Cart container not found!");
+    return;
+  }
+
+  const cartItems = JSON.parse(sessionStorage.getItem("cartItems")) || [];
 
   cartContainer.innerHTML = "";
 
@@ -200,6 +206,7 @@ function renderCart() {
       cartTotal.classList.add("cart-total");
       cartTotal.textContent = `Total: $${totalPrice}`;
       cartContainer.appendChild(cartTotal);
+
   }
 }
 
