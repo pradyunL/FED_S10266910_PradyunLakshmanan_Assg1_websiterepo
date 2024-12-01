@@ -26,16 +26,16 @@ class Shoe {
 }}
 
 const shoes = [
-new Shoe("Bar 1s", 120, "Men", "Basketball", "US10", "/images/Bar-1.jpeg"),
-new Shoe("Cronaldo Aces", 140, "Men", "Football", "US9", "/images/Cronaldo-Aces.jpeg"),
-new Shoe("Gym Junkies", 80, "Women", "Gym", "US10", "/images/Gym-Junkie.png"),
-new Shoe("John 2s", 110, "Women", "Tennis", "US7", "/images/John-2.png"),
-new Shoe("Track Sprinters", 130, "Men", "Track", "US11", "/images/Track-Sprinter.png"),
-new Shoe("LeFrog 1s", 150, "Unisex", "Basketball", "US12", "/images/LeFrog-1s.jpeg"),
-new Shoe("Zoom Cleats", 100, "Unisex", "Football", "US11", "/images/Zoom-Cleats.jpeg"),
-new Shoe("Ripppped", 75, "Men", "Gym", "US13", "/images/Ripppped.png"),
-new Shoe("Tennis Smashes", 95, "Women", "Tennis", "US5", "/images/Tennis-Smash.png"),
-new Shoe("Lylefly 4s", 120, "Unisex", "Track", "US13", "/images/Lylefly-4.png"),
+new Shoe("Bar 1s", 120, "Men", "Basketball", "US10", "Bar-1.jpeg"),
+new Shoe("Cronaldo Aces", 140, "Men", "Football", "US9", "Cronaldo-Aces.jpeg"),
+new Shoe("Gym Junkies", 80, "Women", "Gym", "US10", "Gym-Junkie.png"),
+new Shoe("John 2s", 110, "Women", "Tennis", "US7", "John-2.png"),
+new Shoe("Track Sprinters", 130, "Men", "Track", "US11", "Track-Sprinter.png"),
+new Shoe("LeFrog 1s", 150, "Unisex", "Basketball", "US12", "LeFrog-1s.jpeg"),
+new Shoe("Zoom Cleats", 100, "Unisex", "Football", "US11", "Zoom-Cleats.jpeg"),
+new Shoe("Ripppped", 75, "Men", "Gym", "US13", "Ripppped.png"),
+new Shoe("Tennis Smashes", 95, "Women", "Tennis", "US5", "Tennis-Smash.png"),
+new Shoe("Lylefly 4s", 120, "Unisex", "Track", "US13", "Lylefly-4.png"),
 ];
 
 function displayShoes(filteredShoes = shoes) {
